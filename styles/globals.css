@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+@font-face {
+  font-family: "NFL Packers";
+  src: url('../public/fonts/NFL\ Packers.ttf');
+}
+
+:root {
+  --black: #020202;
+  --white: #FDF9F9;
+  --border-radius: 5px;
+  --font-family: "Roboto", Arial, sans-serif;
+  --title-size: 34px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--black);
+}

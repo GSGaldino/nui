@@ -1,0 +1,19 @@
+.containerPosFooter {
+  background: var(--white);
+}
+
+.posFooter {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.posFooter p {
+  font-size: 16px;
+}
+
+.posFooter img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
