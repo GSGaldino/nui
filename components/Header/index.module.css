@@ -3,14 +3,21 @@
   text-align: center;
   height: 52px;
   display: flex;
-  justify-content: center;
   align-items: center;
+}
+
+.header .nav {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: inherit;
 }
 
 .header a {
   font-size: 22px;
   margin: 20px;
-  font-family: "NFL Packers";
+  font-weight: 600;
 }
 
 .header a:hover {

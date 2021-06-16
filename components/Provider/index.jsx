@@ -1,9 +1,9 @@
 import styles from './index.module.css';
 
-export default function Provider({ children }){
+export default function Provider(props){
   return (
-    <div className={styles.provider}>
-      { children }
+    <div className={styles.provider} {...props}>
+      { props.children }
     </div>
   )
 };
