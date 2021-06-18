@@ -40,7 +40,7 @@
 
 .preHeaderWrapper .item:first-child:hover img {
   transform: rotate(360deg);
-  transition: all 1s ease;
+  transition: all 0.4s ease;
 }
 
 .preHeaderWrapper .item:last-child:after {
@@ -81,4 +81,10 @@
   color: var(--white);
   font-size: 14px;
   padding: 12px;
+}
+
+@media screen and (max-width: 767px){
+  .preHeader {
+    display: none;
+  }
 }
