@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
+import HeaderMobile from '../components/HeaderMobile';
 import PreHeader from '../components/PreHeader';
 import Header from '../components/Header';
 import Collection from '../components/Collection';
@@ -23,6 +24,7 @@ export default function Home({ products, categories }) {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
+      <HeaderMobile />
       <PreHeader />
       <Header />
 
