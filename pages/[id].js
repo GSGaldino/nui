@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
@@ -8,18 +9,21 @@ import { Carousel } from 'react-responsive-carousel';
 import HeaderMobile from '../components/HeaderMobile';
 import PreHeader from '../components/PreHeader';
 import Header from '../components/Header';
+import Product from '../components/Product';
 import Collection from '../components/Collection';
 import Footer from '../components/Footer';
 import PosFooter from '../components/PosFooter';
 
 import { getAllProducts, getCategories } from '../src/api';
 
-export default function Home({ products, categories }) {
+export default function ProductPage({ products, categories }) {
+  const { id } = useRouter().query;
+  const shirt = products.filter(item => item.id === id)[0];
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>Nui | #énui</title>
+        <title>Nui | {shirt.nome}</title>
         <meta name="description" content="Nui oficial" />
         <link rel="icon" href="/favicon.png" />
       </Head>
@@ -28,8 +32,10 @@ export default function Home({ products, categories }) {
       <PreHeader />
       <Header />
 
+      <Product shirt={shirt} />
+
       {categories && categories.map(item => item && (
-        <Collection 
+        <Collection
           key={item.categoria}
           title={item.categoria}
           description={item.descricao}
@@ -43,6 +49,37 @@ export default function Home({ products, categories }) {
 
     </div>
   )
+}
+
+export async function getStaticPaths() {
+  const response = await getAllProducts();
+  const heading = response[0];
+
+  const products = response.map((item, index) => index >= 1 && ({
+    [heading[0]]: item[0],
+    [heading[1]]: item[1],
+    [heading[2]]: item[2],
+    [heading[3]]: item[3],
+    [heading[4]]: item[4],
+    [heading[5]]: item[5],
+    [heading[6]]: item[6],
+    [heading[7]]: item[7],
+    [heading[8]]: item[8],
+    [heading[9]]: item[9],
+    [heading[10]]: item[10],
+    [heading[11]]: item[11],
+    [heading[12]]: item[12],
+  }));
+
+  // Get the paths we want to pre-render based on products
+  const paths = products.map((product, index) => index >= 1 && ({
+    params: { id: product.id }
+  }));
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: blocking } will server-render pages
+  // on-demand if the path doesn't exist.
+  return { paths: paths.filter(item => item !== false), fallback: 'blocking' }
 }
 
 export const getStaticProps = async () => {
@@ -68,7 +105,7 @@ export const getStaticProps = async () => {
           [heading[9]]: item[9],
           [heading[10]]: item[10],
           [heading[11]]: item[11],
-          [heading[12]]: item[12],
+          [heading[12]]: item[12]
         })),
         categories: categories.map((item, index) => index >= 1 && ({
           [categoriesHeading[0]]: item[0],

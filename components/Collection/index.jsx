@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Provider from '../Provider';
 import Card from '../Card';
 
@@ -30,7 +32,11 @@ export default function Collection({ title, background_url, description, shirts 
             {shirts && shirts.map(shirt => (
 
               <div key={shirt.nome}>
-                <Card shirt={shirt} />
+                <Link href={`/${shirt.id}`}>
+                  <a target="_blank">
+                    <Card shirt={shirt} />
+                  </a>
+                </Link>
               </div>
 
             ))}
