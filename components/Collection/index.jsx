@@ -33,7 +33,7 @@ export default function Collection({ title, background_url, description, shirts 
 
               <div key={shirt.nome}>
                 <Link href={`/${shirt.id}`}>
-                  <a target="_blank">
+                  <a>
                     <Card shirt={shirt} />
                   </a>
                 </Link>

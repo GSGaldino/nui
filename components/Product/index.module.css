@@ -1,0 +1,124 @@
+.flexSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.flexItem {
+  color: var(--white);
+}
+
+.flexItem:first-child {
+  width: 60%;
+}
+
+.flexItem:last-child {
+  width: 40%;
+}
+
+.imageTitle {
+  display: flex;
+  justify-content: space-between;
+  max-width: 480px;
+  font-size: 14px;
+}
+
+.flexItem .title {
+  font-size: 46px;
+  font-weight: 600;
+}
+
+.flexItem .separator {
+  margin: 20px 0px;
+}
+
+.tamanhos .wrapper{
+  display: flex;
+}
+
+.tamanhos .wrapper .tamanho {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  margin: 10px 20px 40px 0px;
+  font-size: 20px;
+}
+
+.cores .wrapper {
+  display: flex;
+}
+
+.preco {
+  font-size: 20px;
+  margin: 10px 0px;
+}
+
+.preco small {
+  font-size: 14px;
+  margin: 6px;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.buttonPrimary {
+  background: var(--white);
+  color: var(--black);
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.buttonSecondary {
+  background: var(--black);
+  border: 1px solid var(--white);
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.description {
+  color: var(--white);
+}
+
+.description h4 {
+  font-weight: 600;
+  font-size: 26px;
+  margin: 20px 0px;
+}
+
+.descriptionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 20px 0px;
+}
+
+@media screen and (max-width: 767px){
+  .flexSection {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .flexItem:first-child,
+  .flexItem:last-child {
+    width: 100%;
+  }
+
+  .description {
+    padding: 10px;
+  }
+}

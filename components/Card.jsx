@@ -28,11 +28,7 @@ export default function Card({ shirt }) {
 
       <div className={styles.cardPrice}>
         <strong>
-          {
-            `R$ ${Number(preco.replace(',', '.')) // with "."
-              .toFixed(2)
-              .replace('.', ',')}` // with ","
-          }
+          {preco}
         </strong>
         <span className={styles.parcelado}>OU {parcelado}</span>
       </div>

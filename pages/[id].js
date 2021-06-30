@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
@@ -23,7 +24,7 @@ export default function ProductPage({ products, categories }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Nui | {shirt.nome}</title>
+        <title>Nui | {shirt && shirt.nome}</title>
         <meta name="description" content="Nui oficial" />
         <link rel="icon" href="/favicon.png" />
       </Head>
@@ -32,7 +33,7 @@ export default function ProductPage({ products, categories }) {
       <PreHeader />
       <Header />
 
-      <Product shirt={shirt} />
+      <Product shirt={shirt && shirt} />
 
       {categories && categories.map(item => item && (
         <Collection
