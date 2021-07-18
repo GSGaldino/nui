@@ -36,7 +36,7 @@ export default function Product({ shirt }) {
       };
 
       // Set message parameters
-      const phone = '5511986345917';
+      const phone = '5511910052395';
       const tamanho = selectedData.tamanho;
       const cor = availableColors[selectedData.cor] || selectedData.cor;
       const shirtName = productData.nome;
