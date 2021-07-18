@@ -15,6 +15,16 @@ import PosFooter from '../components/PosFooter';
 import { getAllProducts, getCategories } from '../src/api';
 
 export default function Home({ products, categories }) {
+  const carouselImages = [
+    {
+      src: "/carousel/welcome-banner.jpg",
+      href: null,
+    },
+    {
+      src: "/carousel/psicodelico.jpg",
+      href: "#psicodelico",
+    },
+  ];
 
   return (
     <div className={styles.container}>
@@ -34,6 +44,27 @@ export default function Home({ products, categories }) {
       <Header
         data={categories && categories}
       />
+
+      <Carousel
+        autoPlay
+        infiniteLoop
+        showStatus={false}
+        showThumbs={false}
+      >
+        {carouselImages && carouselImages.map((item, index) => (
+          <div key={index} style={{
+            maxHeight: "360px",
+          }}>
+            <a href={item.href}>
+              <img
+                src={item.src}
+                className={styles.carouselImage}
+              />
+            </a>
+
+          </div>
+        ))}
+      </Carousel>
 
       {categories && categories.map(item => item && (
         <Collection

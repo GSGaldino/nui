@@ -3,3 +3,16 @@
   min-height: 100vh;
   overflow: hidden;
 }
+
+.carouselImage {
+  position: relative;
+  top: -40px;
+}
+
+@media screen and (max-width: 767px){
+  .carouselImage {
+    height: 220px;
+    object-fit: cover;
+    top: 0px;
+  }
+}
