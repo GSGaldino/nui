@@ -32,7 +32,7 @@ export default function Collection({ title, background_url, description, shirts,
             {shirts && shirts.map(shirt => (
 
               <div key={shirt.nome}>
-                <Link href={`/${shirt.id}`}>
+                <Link href={`/${shirt.slug}`}>
                   <a>
                     <Card shirt={shirt} />
                   </a>

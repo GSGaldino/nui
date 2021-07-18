@@ -77,6 +77,7 @@ export const getStaticProps = async () => {
           [heading[10]]: item[10],
           [heading[11]]: item[11],
           [heading[12]]: item[12],
+          [heading[13]]: item[13],
         })),
         categories: categories.map((item, index) => index >= 1 && ({
           [categoriesHeading[0]]: item[0],

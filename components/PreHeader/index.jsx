@@ -1,14 +1,10 @@
-import { useState } from 'react';
 import Provider from '../Provider';
 import Link from 'next/link';
 import CartIcon from '../CartIcon';
 
-import store from '../../src/store';
-
 import styles from './index.module.css';
 
 export default function PreHeader() {
-  const [cart, setCart] = useState(store.getState());
 
   return (
     <div className={styles.preHeader}>

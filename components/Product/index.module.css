@@ -65,6 +65,10 @@
   transition : border 500ms ease-out;
 }
 
+.cor {
+  cursor: pointer;
+}
+
 .cor.active {
   border-color: var(--selection-color) !important;
   -webkit-transition : border 500ms ease-out;

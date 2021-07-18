@@ -1,11 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 
 import HeaderMobile from '../components/HeaderMobile';
 import PreHeader from '../components/PreHeader';
@@ -18,8 +16,8 @@ import PosFooter from '../components/PosFooter';
 import { getAllProducts, getCategories } from '../src/api';
 
 export default function ProductPage({ products, categories }) {
-  const { id } = useRouter().query;
-  const shirt = products.filter(item => item.id === id)[0];
+  const { slug } = useRouter().query;
+  const shirt = products.filter(item => item.slug === slug)[0];
 
   return (
     <div className={styles.container}>
@@ -77,11 +75,12 @@ export async function getStaticPaths() {
     [heading[10]]: item[10],
     [heading[11]]: item[11],
     [heading[12]]: item[12],
+    [heading[13]]: item[13],
   }));
 
   // Get the paths we want to pre-render based on products
   const paths = products.map((product, index) => index >= 1 && ({
-    params: { id: product.id }
+    params: { slug: product.slug }
   }));
 
   // We'll pre-render only these paths at build time.
@@ -113,7 +112,8 @@ export const getStaticProps = async () => {
           [heading[9]]: item[9],
           [heading[10]]: item[10],
           [heading[11]]: item[11],
-          [heading[12]]: item[12]
+          [heading[12]]: item[12],
+          [heading[13]]: item[13]
         })),
         categories: categories.map((item, index) => index >= 1 && ({
           [categoriesHeading[0]]: item[0],
