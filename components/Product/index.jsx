@@ -2,6 +2,8 @@ import React from 'react';
 import Provider from '../Provider';
 import { useRouter } from 'next/router';
 
+import Magnifier from 'react-magnifier';
+
 import { useToast } from '@chakra-ui/react';
 
 import styles from './index.module.css';
@@ -27,7 +29,7 @@ export default function Product({ shirt }) {
         variant: "top-accent"
       });
 
-    else if (selectedData.tamanho && selectedData.cor){
+    else if (selectedData.tamanho && selectedData.cor) {
       // Object to configure color parameter
       const availableColors = {
         "#FDF9F9": "branca",
@@ -51,9 +53,13 @@ export default function Product({ shirt }) {
   const Description = () => (
     <div className={styles.description}>
       <h4>Sobre a sua nova camiseta:</h4>
-      <p dangerouslySetInnerHTML={{ __html: productData.sobre }} />
+      <div>
+        <div dangerouslySetInnerHTML={{ __html: productData.sobre }}></div>
+      </div>
       <p className={styles.descriptionTitle}>Descricao</p>
-      <p dangerouslySetInnerHTML={{ __html: productData.descricao }} />
+      <div>
+        <div dangerouslySetInnerHTML={{ __html: productData.descricao }}></div>
+      </div>
     </div>
   );
 
@@ -108,7 +114,7 @@ export default function Product({ shirt }) {
               <p>Camiseta</p>
               <p>Coleção <strong>{productData.categoria}</strong></p>
             </div>
-            <img src={productData.foto_1} />
+            <Magnifier src={productData.foto_1} className={styles.image} />
           </div>
 
           <div className={styles.flexItem}>
@@ -116,7 +122,9 @@ export default function Product({ shirt }) {
               dangerouslySetInnerHTML={{ __html: productData.nome }}
               className={styles.title}
             />
-            <p dangerouslySetInnerHTML={{ __html: productData.descricao_curta }} />
+            <div>
+              <div dangerouslySetInnerHTML={{ __html: productData.descricao_curta }}></div>
+            </div>
             <hr className={styles.separator} />
 
             <div className={styles.tamanhos}>
@@ -143,14 +151,14 @@ export default function Product({ shirt }) {
             </p>
 
             <div className={styles.cta}>
-              <button 
+              <button
                 className={styles.buttonPrimary}
                 onClick={handleSubmit}
               >
                 Comprar agora
               </button>
 
-              <button 
+              <button
                 className={styles.buttonSecondary}
                 onClick={e => {
                   e.preventDefault();

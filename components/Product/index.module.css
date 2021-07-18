@@ -24,6 +24,10 @@
   font-size: 14px;
 }
 
+.image {
+  width: 479px !important;
+}
+
 .flexItem .title {
   font-size: 46px;
   font-weight: 600;
@@ -142,4 +146,9 @@
   .description {
     padding: 10px;
   }
+
+  .image {
+    width: 100% !important;
+  }
+
 }

@@ -20,7 +20,7 @@
   font-weight: 600;
 }
 
-.header a:hover {
+.header a:not(:first-child):hover {
   text-decoration: underline;
 }
 

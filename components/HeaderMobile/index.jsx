@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 
 import { HamburgerIcon } from '@chakra-ui/icons';
+import CartIcon from '../CartIcon';
 
 import styles from './index.module.css';
 
@@ -38,7 +39,7 @@ export default function HeaderMobile() {
           </div>
 
           <div className={styles.item}>
-            <img src="cart.svg" />
+            <CartIcon isWithoutText/>
           </div>
 
         </div>

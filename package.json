@@ -17,6 +17,7 @@
     "next": "10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-magnifier": "^3.0.4",
     "react-responsive-carousel": "^3.2.18",
     "redux": "^4.1.0"
   },
