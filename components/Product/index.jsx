@@ -40,7 +40,7 @@ export default function Product({ shirt }) {
       const tamanho = selectedData.tamanho;
       const cor = availableColors[selectedData.cor] || selectedData.cor;
       const shirtName = productData.nome;
-      const message = `Oi, Nuile! Quero falar sobre a camiseta ${shirtName}. Você tem ela no tamanho ${tamanho} e na cor ${cor}? Tenho interesse!`;
+      const message = `Oi, Nuile! Quero falar sobre a camiseta ${shirtName.replace("#", " ")}. Você tem ela no tamanho ${tamanho} e na cor ${cor.replace("#", " ")}? Tenho interesse!`;
       const whatsAppLink = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
 
       // Open whatsapp api on new tab
