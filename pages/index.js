@@ -52,16 +52,18 @@ export default function Home({ products, categories }) {
         showThumbs={false}
       >
         {carouselImages && carouselImages.map((item, index) => (
-          <div key={index} style={{
-            maxHeight: "360px",
-          }}>
-            <a href={item.href}>
+          <div key={index}>
+            <a href={item.href} style={{
+              position: "relative",
+              height: "100%",
+              width: "100%",
+              display: "block"
+            }}>
               <img
                 src={item.src}
                 className={styles.carouselImage}
               />
             </a>
-
           </div>
         ))}
       </Carousel>
@@ -87,10 +89,10 @@ export default function Home({ products, categories }) {
 export const getStaticProps = async () => {
   try {
     const categories = await getCategories();
-    const categoriesHeading = categories[0];
+    const categoriesHeading = categories && categories[0];
 
     const products = await getAllProducts();
-    const heading = products[0];
+    const heading = products && products[0];
 
     return {
       props: {

@@ -6,7 +6,8 @@
 
 .carouselImage {
   position: relative;
-  top: -40px;
+  max-height: 480px;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 767px){
