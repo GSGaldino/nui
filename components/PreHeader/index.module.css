@@ -83,6 +83,14 @@
   padding: 12px;
 }
 
+.counter {
+  color: var(--black);
+  font-weight: 900;
+  position: absolute;
+  left: 80px;
+  top: 9px;
+}
+
 @media screen and (max-width: 767px){
   .preHeader {
     display: none;

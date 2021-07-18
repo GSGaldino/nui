@@ -31,7 +31,9 @@ export default function ProductPage({ products, categories }) {
 
       <HeaderMobile />
       <PreHeader />
-      <Header />
+      <Header 
+        data={categories && categories}
+      />
 
       <Product shirt={shirt && shirt} />
 
@@ -112,6 +114,7 @@ export const getStaticProps = async () => {
           [categoriesHeading[0]]: item[0],
           [categoriesHeading[1]]: item[1],
           [categoriesHeading[2]]: item[2],
+          [categoriesHeading[3]]: item[3],
         })),
       },
       revalidate: 1,

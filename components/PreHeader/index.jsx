@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import Provider from '../Provider';
 import Link from 'next/link';
+
+import store from '../../src/store';
 
 import styles from './index.module.css';
 
 export default function PreHeader() {
+  const [cart, setCart] = useState(store.getState());
+
   return (
     <div className={styles.preHeader}>
       <Provider>
@@ -40,6 +45,7 @@ export default function PreHeader() {
             <img src="cart.svg" />
             <div className={styles.column}>
               <p>Meu carrinho</p>
+              <p className={styles.counter}>{cart && cart.counter}</p>
               <p style={{ marginTop: "6px" }}>R$: 0,00</p>
             </div>
           </div>

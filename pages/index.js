@@ -26,7 +26,9 @@ export default function Home({ products, categories }) {
 
       <HeaderMobile />
       <PreHeader />
-      <Header />
+      <Header 
+        data={categories && categories}
+      />
 
       {categories && categories.map(item => item && (
         <Collection 
@@ -34,6 +36,7 @@ export default function Home({ products, categories }) {
           title={item.categoria}
           description={item.descricao}
           background_url={item.background_url}
+          slug={item.slug}
           shirts={products.filter(shirt => shirt.categoria === item.categoria)}
         />
       ))}
@@ -74,6 +77,7 @@ export const getStaticProps = async () => {
           [categoriesHeading[0]]: item[0],
           [categoriesHeading[1]]: item[1],
           [categoriesHeading[2]]: item[2],
+          [categoriesHeading[3]]: item[3],
         })),
       },
       revalidate: 1,

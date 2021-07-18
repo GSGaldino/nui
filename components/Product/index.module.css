@@ -46,6 +46,27 @@
   place-items: center;
   margin: 10px 20px 40px 0px;
   font-size: 20px;
+  cursor: pointer;
+  -webkit-transition : border 500ms ease-out;
+  -moz-transition : border 500ms ease-out;
+  -o-transition : border 500ms ease-out;
+  transition : border 500ms ease-out;
+}
+
+.tamanhos .wrapper .tamanho.active{
+  border-color: var(--selection-color);
+  -webkit-transition : border 500ms ease-out;
+  -moz-transition : border 500ms ease-out;
+  -o-transition : border 500ms ease-out;
+  transition : border 500ms ease-out;
+}
+
+.cor.active {
+  border-color: var(--selection-color) !important;
+  -webkit-transition : border 500ms ease-out;
+  -moz-transition : border 500ms ease-out;
+  -o-transition : border 500ms ease-out;
+  transition : border 500ms ease-out;
 }
 
 .cores .wrapper {

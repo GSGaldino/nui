@@ -1,14 +1,14 @@
 import React from 'react';
+import Link from 'next/link';
 
 import Provider from '../Provider';
-import { 
+import {
   Drawer,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
   DrawerOverlay,
-  Input,
- } from '@chakra-ui/react';
+} from '@chakra-ui/react';
 
 import { HamburgerIcon } from '@chakra-ui/icons';
 
@@ -23,16 +23,18 @@ export default function HeaderMobile() {
         <div className={styles.headerMobileWrapper}>
 
           <div className={styles.item}>
-            <HamburgerIcon 
-              w={10} 
-              h={10} 
-              color="#FDF9F9" 
+            <HamburgerIcon
+              w={10}
+              h={10}
+              color="#FDF9F9"
               onClick={e => setIsOpen(true)}
             />
           </div>
 
           <div className={styles.item}>
-            <img src="logo.svg" />
+            <Link href={"/"}>
+              <img src="logo.svg" />
+            </Link>
           </div>
 
           <div className={styles.item}>
@@ -49,7 +51,7 @@ export default function HeaderMobile() {
       >
         <DrawerOverlay />
         <DrawerContent background="var(--black)">
-          <DrawerCloseButton 
+          <DrawerCloseButton
             color="var(--white)"
             _focus={{
               border: "none"
@@ -74,12 +76,12 @@ export default function HeaderMobile() {
                 <div className={styles.menuOptionsItem}>
                   <img src="ovelha_negra.svg" />
                   <div>
-                    <p>Entrar ou <br/> cadastrar</p>
+                    <p>Entrar ou <br /> cadastrar</p>
                   </div>
                 </div>
                 <div className={styles.menuOptionsItem}>
                   <img src="chat.svg" />
-                  <p>Central de <br/> Atendimento</p>
+                  <p>Central de <br /> Atendimento</p>
                 </div>
                 <div className={styles.menuOptionsItem}>
                   <img src="cart.svg" />
@@ -90,7 +92,7 @@ export default function HeaderMobile() {
                 </div>
                 <div className={styles.menuOptionsItem}>
                   <img src="lupa.svg" />
-                  <input placeholder="Busca"/>
+                  <input placeholder="Busca" />
                 </div>
               </div>
 

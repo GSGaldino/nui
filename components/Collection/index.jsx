@@ -5,12 +5,12 @@ import Card from '../Card';
 
 import styles from './index.module.css';
 
-export default function Collection({ title, background_url, description, shirts }) {
+export default function Collection({ title, background_url, description, shirts, slug }) {
 
   return (
     <div className={styles.containerCollection}>
       <Provider>
-        <div className={styles.collection}>
+        <div className={styles.collection} id={slug}>
 
           <div className={styles.collectionTitle}>
             <div
