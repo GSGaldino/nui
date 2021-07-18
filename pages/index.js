@@ -22,16 +22,21 @@ export default function Home({ products, categories }) {
         <title>Nui | #énui</title>
         <meta name="description" content="Nui oficial" />
         <link rel="icon" href="/favicon.png" />
+        <meta property="og:site_name" content="Nui oficial" />
+        <meta property="og:title" content="Nui | #énui" />
+        <meta property="og:description" content="Site oficial de nui." />
+        <meta property="og:image" itemprop="image" content="/logo.svg" />
+        <meta property="og:type" content="website" />
       </Head>
 
       <HeaderMobile />
       <PreHeader />
-      <Header 
+      <Header
         data={categories && categories}
       />
 
       {categories && categories.map(item => item && (
-        <Collection 
+        <Collection
           key={item.categoria}
           title={item.categoria}
           description={item.descricao}
