@@ -33,7 +33,8 @@
 .collectionContent {
   width: 70%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 767px){
@@ -71,6 +72,7 @@
   .collectionContent {
     width: 100%;
     overflow-x: scroll;
+    flex-wrap: nowrap;
   }
 
 }

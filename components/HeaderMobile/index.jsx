@@ -15,7 +15,7 @@ import CartIcon from '../CartIcon';
 
 import styles from './index.module.css';
 
-export default function HeaderMobile() {
+export default function HeaderMobile({ data }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -39,7 +39,7 @@ export default function HeaderMobile() {
           </div>
 
           <div className={styles.item}>
-            <CartIcon isWithoutText/>
+            <CartIcon isWithoutText />
           </div>
 
         </div>
@@ -65,10 +65,21 @@ export default function HeaderMobile() {
                 <nav>
                   <ul>
                     <li><p>Coleções:</p></li>
-                    <li><a>Artsy Sh*t</a></li>
-                    <li><a>Psicodélico</a></li>
-                    <li><a>Seventh</a></li>
-                    <li><a>É nui</a></li>
+                    {data && data.map((item, index) => {
+                      const link = `/#${item.slug}`;
+
+                      return (
+                        <li 
+                          key={index}
+                          onClick={e => setIsOpen(false)}
+                        >
+                          <a href={link}>
+                            {item.categoria}
+                          </a>
+                        </li>
+                      )
+
+                    })}
                   </ul>
                 </nav>
               </div>

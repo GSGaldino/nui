@@ -46,6 +46,7 @@
 
   .counter {
     color: var(--black);
-    left: 34.5px;
+    left: 69%;
+    top: 16%;
   }
 }

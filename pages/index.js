@@ -39,7 +39,9 @@ export default function Home({ products, categories }) {
         <meta property="og:type" content="website" />
       </Head>
 
-      <HeaderMobile />
+      <HeaderMobile 
+        data={categories && categories}
+      />
       <PreHeader />
       <Header
         data={categories && categories}
