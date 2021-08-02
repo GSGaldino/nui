@@ -1,0 +1,28 @@
+.devolucaoETrocas {
+  text-align: center;
+  color: var(--white);
+  margin: 10px 0px 60px 0px;
+  padding: 10px;
+}
+
+.devolucaoETrocas h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: "Korolev Military Stencil";
+  font-weight: 900;
+}
+
+.devolucaoETrocas .bold {
+  font-weight: bold;
+}
+
+.devolucaoETrocas img {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.devolucaoETrocas p {
+  margin: 10px auto;
+  max-width: 800px;
+}

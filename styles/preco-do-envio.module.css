@@ -1,0 +1,28 @@
+.precoDoEnvio {
+  text-align: center;
+  color: var(--white);
+  margin: 10px 0px 60px 0px;
+  padding: 10px;
+}
+
+.precoDoEnvio h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Korolev Military Stencil";
+}
+
+.precoDoEnvio .bold {
+  font-weight: bold;
+}
+
+.precoDoEnvio img {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.precoDoEnvio p {
+  margin: 10px auto;
+  max-width: 800px;
+}

@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url(//db.onlinewebfonts.com/c/7aa6f23718712abc71a57b079ebadb52?family=Korolev+Military+Stencil);
 
 @font-face {
   font-family: "NFL Packers";
   src: url('../public/fonts/NFL\ Packers.ttf');
+}
+
+@font-face {
+  font-family: "Korolev Military Stencil"; 
+  src: url("//db.onlinewebfonts.com/t/7aa6f23718712abc71a57b079ebadb52.eot"); 
+  src: url("//db.onlinewebfonts.com/t/7aa6f23718712abc71a57b079ebadb52.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7aa6f23718712abc71a57b079ebadb52.woff2") format("woff2"), 
+  url("//db.onlinewebfonts.com/t/7aa6f23718712abc71a57b079ebadb52.woff") format("woff"), 
+  url("//db.onlinewebfonts.com/t/7aa6f23718712abc71a57b079ebadb52.ttf") format("truetype"), 
+  url("//db.onlinewebfonts.com/t/7aa6f23718712abc71a57b079ebadb52.svg#Korolev Military Stencil") format("svg"); 
 }
 
 :root {

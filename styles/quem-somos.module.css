@@ -1,0 +1,28 @@
+.quemSomos {
+  text-align: center;
+  color: var(--white);
+  margin: 10px 0px 60px 0px;
+  padding: 10px;
+}
+
+.quemSomos h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Korolev Military Stencil";
+}
+
+.quemSomos .bold {
+  font-weight: bold;
+}
+
+.quemSomos img {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.quemSomos p {
+  margin: 10px auto;
+  max-width: 800px;
+}

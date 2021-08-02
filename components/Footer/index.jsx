@@ -1,4 +1,5 @@
 import Provider from '../Provider';
+import Link from 'next/link';
 
 import styles from './index.module.css';
 
@@ -13,11 +14,11 @@ export default function Footer(){
             <h5>Ajuda e suporte</h5>
             <nav>
               <ul>
-                <li><a href="#">Preço do envio</a></li>
-                <li><a href="#">Devolução</a></li>
-                <li><a href="#">Como Pedir</a></li>
+                <li><Link href="/preco-do-envio"><a>Preço do envio</a></Link></li>
+                <li><Link href="/devolucao-e-trocas"><a>Devolução</a></Link></li>
+                <li><Link href="/como-pedir"><a>Como pedir</a></Link></li>
                 <li><a href="#">Como Rastrear</a></li>
-                <li><a href="#">Guia de tamanhos</a></li>
+                <li><Link href="/guia-de-tamanhos"><a>Guia de tamanhos</a></Link></li>
               </ul>
             </nav>
           </div>
@@ -26,8 +27,8 @@ export default function Footer(){
             <h5>Atendimento ao cliente</h5>
             <nav>
               <ul>
-                <li><a href="#">Entre em contato com Nui</a></li>
-                <li><a href="#">Método de pagamento</a></li>
+                <li><Link href="/entre-em-contato"><a>Entre em contato com Nui</a></Link></li>
+                <li><Link href="/metodo-de-pagamento"><a>Método de pagamento</a></Link></li>
               </ul>
             </nav>
           </div>
@@ -36,7 +37,7 @@ export default function Footer(){
             <h5>Informações da empresa</h5>
             <nav>
               <ul>
-                <li><a href="#">Quem somos Nui</a></li>
+                <li><Link href="/quem-somos"><a>Quem somos Nui</a></Link></li>
               </ul>
             </nav>
           </div>

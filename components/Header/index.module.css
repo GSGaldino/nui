@@ -18,6 +18,8 @@
   font-size: 22px;
   margin: 20px;
   font-weight: 600;
+  font-family: "Korolev Military Stencil";
+  text-transform: uppercase;
 }
 
 .header a:not(:first-child):hover {

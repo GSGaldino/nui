@@ -1,0 +1,32 @@
+.guiaDeTamanhos {
+  text-align: center;
+  color: var(--white);
+  margin: 10px 0px 60px 0px;
+  padding: 10px;
+}
+
+.guiaDeTamanhos h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: "Korolev Military Stencil";
+  font-weight: 900;
+}
+
+.guiaDeTamanhos .bold {
+  font-weight: bold;
+}
+
+.guiaDeTamanhos img {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.guiaDeTamanhos p {
+  margin: 10px auto;
+  max-width: 800px;
+}
+
+.guiaDeTamanhos .tabelaDeMedidas {
+  width: 620px;
+}
