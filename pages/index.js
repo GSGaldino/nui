@@ -15,9 +15,8 @@ import PosFooter from '../components/PosFooter';
 import { getAllProducts, getCategories, getBannerImages } from '../src/api';
 
 export default function Home({ products, categories, bannerImages }) {
-  // Remover first item of array
-  
-  const carouselImages = bannerImages.slice(1, 3);;
+  // Remove first item of array
+  const carouselImages = bannerImages.slice(1, bannerImages.length);
 
   return (
     <div className={styles.container}>
