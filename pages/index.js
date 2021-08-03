@@ -12,19 +12,12 @@ import Collection from '../components/Collection';
 import Footer from '../components/Footer';
 import PosFooter from '../components/PosFooter';
 
-import { getAllProducts, getCategories } from '../src/api';
+import { getAllProducts, getCategories, getBannerImages } from '../src/api';
 
-export default function Home({ products, categories }) {
-  const carouselImages = [
-    {
-      src: "/carousel/welcome-banner.jpg",
-      href: null,
-    },
-    {
-      src: "/carousel/psicodelico.jpg",
-      href: "#psicodelico",
-    },
-  ];
+export default function Home({ products, categories, bannerImages }) {
+  // Remover first item of array
+  
+  const carouselImages = bannerImages.slice(1, 3);;
 
   return (
     <div className={styles.container}>
@@ -39,7 +32,7 @@ export default function Home({ products, categories }) {
         <meta property="og:type" content="website" />
       </Head>
 
-      <HeaderMobile 
+      <HeaderMobile
         data={categories && categories}
       />
       <PreHeader />
@@ -55,14 +48,14 @@ export default function Home({ products, categories }) {
       >
         {carouselImages && carouselImages.map((item, index) => (
           <div key={index}>
-            <a href={item.href} style={{
+            <a href={item.link} style={{
               position: "relative",
               height: "100%",
               width: "100%",
               display: "block"
             }}>
               <img
-                src={item.src}
+                src={item.url}
                 className={styles.carouselImage}
               />
             </a>
@@ -96,6 +89,9 @@ export const getStaticProps = async () => {
     const products = await getAllProducts();
     const heading = products && products[0];
 
+    const bannerImages = await getBannerImages();
+    const bannerImagesHeading = bannerImages && bannerImages[0];
+
     return {
       props: {
         products: products.map((item, index) => index >= 1 && ({
@@ -120,6 +116,10 @@ export const getStaticProps = async () => {
           [categoriesHeading[2]]: item[2],
           [categoriesHeading[3]]: item[3],
         })),
+        bannerImages: bannerImages.map((item, index) => index >= 1 && ({
+          [bannerImagesHeading[0]]: item[0],
+          [bannerImagesHeading[1]]: item[1] || null,
+        }))
       },
       revalidate: 1,
     }

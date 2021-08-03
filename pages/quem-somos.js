@@ -3,6 +3,7 @@ import HeaderMobile from '../components/HeaderMobile';
 import PreHeader from '../components/PreHeader';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PosFooter from '../components/PosFooter';
 
 import Provider from '../components/Provider';
 
@@ -44,6 +45,7 @@ export default function QuemSomos({categories}){
       </Provider>
 
       <Footer />
+      <PosFooter />
     </div>
   )    
 }

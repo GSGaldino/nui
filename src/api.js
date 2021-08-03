@@ -67,3 +67,32 @@ async function _getCategories(auth) {
   if (data.length)
     return data;
 }
+
+export async function getBannerImages() {
+  try {
+    const { client_secret, client_id, redirect_uris } = credentials.installed;
+    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
+
+    oAuth2Client.setCredentials(token);
+
+    const data = await _getBannerImages(oAuth2Client);
+
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function _getBannerImages(auth) {
+  const sheets = google.sheets({ version: 'v4', auth });
+
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: SHEET_ID,
+    range: 'banner_site'
+  })
+
+  const data = response.data.values;
+
+  if (data.length)
+    return data;
+}

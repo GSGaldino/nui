@@ -1,0 +1,93 @@
+.entrarOuCadastrar {
+  text-align: center;
+  color: var(--white);
+  margin: 10px 0px 60px 0px;
+  padding: 10px;
+}
+
+.entrarOuCadastrar h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: "Korolev Military Stencil";
+  font-weight: 900;
+}
+
+.entrarOuCadastrar h3 {
+  font-size: 24px;
+  margin: 0px;
+}
+
+.entrarOuCadastrar .subtitle {
+  font-weight: 300;
+  margin: 0px auto;
+}
+
+.entrarOuCadastrar .description {
+  font-weight: 600;
+  margin: 20px auto;
+}
+
+.entrarOuCadastrar img {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.entrarOuCadastrar p {
+  margin: 10px auto;
+  max-width: 800px;
+}
+
+.entrarOuCadastrar form {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.entrarOuCadastrar form .formTitle {
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+.entrarOuCadastrar .field {
+  margin: 10px 0px;
+}
+
+.entrarOuCadastrar .field p {
+  margin: 0px;
+}
+
+.entrarOuCadastrar .field input {
+  background: var(--black);
+  border: 2px solid #dcdce6aa;
+  border-radius: 6px;
+  padding: 6px;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+
+.actions button {
+  border-radius: 60px;
+  width: 48%;
+  padding: 6px;
+  font-weight: 600;
+  transition: filter 0.4s ease;
+}
+
+.actions button:hover {
+  filter: brightness(80%);
+}
+
+.actions button:first-child {
+  background: var(--white);
+  color: black;
+}
+
+.actions button:last-child {
+  border: 2px solid #dcdce6aa;
+}
