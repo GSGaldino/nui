@@ -11,7 +11,7 @@ export default function CartIcon({ isWithoutText }) {
     <div className={styles.cartIcon}>
       <div className={styles.item}>
         <img src="cart.svg" />
-        <p className={styles.counter}>{cart && cart.counter}</p>
+        <label className={styles.counter}>{cart && cart.counter}</label>
         {!isWithoutText && <div className={styles.column}>
           <p>Meu carrinho</p>
           <p style={{ marginTop: "6px" }}>R$: 0,00</p>

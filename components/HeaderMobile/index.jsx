@@ -17,6 +17,14 @@ import styles from './index.module.css';
 
 export default function HeaderMobile({ data }) {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isCentralDeAtendimentoOpen, setIsCentralDeAtendimentoOpen] = React.useState(false);
+
+  const handleItemClick = () => {
+    const newState = !isCentralDeAtendimentoOpen;
+
+    setIsCentralDeAtendimentoOpen(newState);
+    console.log(newState);
+  };
 
   return (
     <div className={styles.headerMobile}>
@@ -69,7 +77,7 @@ export default function HeaderMobile({ data }) {
                       const link = `/#${item.slug}`;
 
                       return (
-                        <li 
+                        <li
                           key={index}
                           onClick={e => setIsOpen(false)}
                         >
@@ -85,27 +93,59 @@ export default function HeaderMobile({ data }) {
               </div>
 
               <div className={styles.menuOptions}>
+                <div
+                  onClick={handleItemClick}
+                  className={`
+                    ${styles.menuOptionsItem} 
+                    ${styles.centralAtendimento}
+                  `}
+                >
+                  <div className={styles.item}>
+                    <img src="chat.svg" />
+                    <div className={styles.flexItem}>
+                      <p>Central de <br /> Atendimento</p>
+                      <img src="arrow_down.svg" />
+                    </div>
+                  </div>
+
+                  <div
+                    className={`
+                      ${styles.contacts} 
+                      ${isCentralDeAtendimentoOpen ? styles.open : null}
+                    `}
+                  >
+
+                    <div className={styles.contact}>
+                      <p>Nosso zap é</p>
+                      <a
+                        href="https://api.whatsapp.com/send?phone=5511910052395"
+                        target="_blank"
+                      >+55 (11) 91005-2395</a>
+                    </div>
+                    <div className={styles.contact}>
+                      <p>E nosso e-mail</p>
+                      <a>nuioficial@gmail.com</a>
+                    </div>
+                    <p>Fique a vontade para conversar conosco!</p>
+                  </div>
+                </div>
+
                 <div className={styles.menuOptionsItem}>
                   <img src="ovelha_negra.svg" />
                   <div>
                     <p>Entrar ou <br /> cadastrar</p>
                   </div>
                 </div>
+
                 <div className={styles.menuOptionsItem}>
-                  <img src="chat.svg" />
-                  <p>Central de <br /> Atendimento</p>
+                  <CartIcon />
                 </div>
+
                 <div className={styles.menuOptionsItem}>
-                  <img src="cart.svg" />
-                  <div>
-                    <p>Meu carrinho</p>
-                    <p>R$: 0,00</p>
-                  </div>
+                  {/* <img src="lupa.svg" />
+                  <input placeholder="Busca" /> */}
                 </div>
-                <div className={styles.menuOptionsItem}>
-                  <img src="lupa.svg" />
-                  <input placeholder="Busca" />
-                </div>
+
               </div>
 
             </div>

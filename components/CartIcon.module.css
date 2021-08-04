@@ -35,8 +35,9 @@
   color: var(--black);
   font-weight: 900;
   position: absolute;
-  left: 53.5px;
-  top: 10px;
+  left: 53.4px;
+  top: 6px;
+  z-index: 99;
 }
 
 @media screen and (max-width: 767px){
@@ -46,7 +47,7 @@
 
   .counter {
     color: var(--black);
-    left: 69%;
-    top: 16%;
+    left: 34px;
+    top: 6px;
   }
 }
