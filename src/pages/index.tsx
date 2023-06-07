@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import Head from 'next/head'
 import { Provider, Collection, Banner } from '@/components'
 import { IProduct } from '@/types'
-import api from '@/services/api'
+import SheetService from '@/services/SheetService'
 
 import * as S from './styles'
 
@@ -48,8 +48,7 @@ export default function Home({ products, banner }: HomeProps) {
 
 export const getStaticProps = async () => {
   const [products, banner] = await Promise.all(['produtos', 'banner_site'].map(async (item) => {
-    const url = `/sheets?range=${item}`
-    const { data } = await api.get(url)
+    const data = await SheetService.getRange(`/sheets?range=${item}`);
     return data.data
   }))
 

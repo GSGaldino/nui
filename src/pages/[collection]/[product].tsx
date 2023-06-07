@@ -12,6 +12,7 @@ import getProductType from '@/utils/getProductType';
 import Main from './components/Main';
 import Details from './components/Details';
 import Advantages from './components/Advantages';
+import SheetService from '@/services/SheetService';
 
 import * as S from './productStyles'
 
@@ -87,8 +88,7 @@ export default function Product({ products }: { products: any }) {
 }
 
 export const getStaticProps = async () => {
-  const url = `/sheets?range=produtos`
-  const { data } = await api.get(url)
+  const data = await SheetService.getRange('/sheets?range=produtos');
   const products = data.data;
 
   return {
@@ -100,8 +100,7 @@ export const getStaticProps = async () => {
 }
 
 export const getStaticPaths = async () => {
-  const url = `/sheets?range=produtos`
-  const { data } = await api.get(url)
+  const data = await SheetService.getRange('/sheets?range=produtos');
   const products = data.data;
   const collections = products?.reduce((acc: any, prod: any) => {
     const existantCollection = acc.find((item: any) => item.name === prod.categoria);
