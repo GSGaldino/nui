@@ -10,7 +10,7 @@ interface HomeProps { products: IProduct[], banner: any };
 
 export default function Home({ products, banner }: HomeProps) {
   const collections = useMemo(() => {
-    return products.reduce((acc: any, prod: any) => {
+    return products?.reduce((acc: any, prod: any) => {
       const existantCollection = acc.find((item: any) => item.name === prod.categoria);
       if (existantCollection) {
         existantCollection.products.push(prod);
@@ -25,7 +25,7 @@ export default function Home({ products, banner }: HomeProps) {
     }, [])
   }, [products]);
 
-  const releases = products.slice(20, products.length).reverse();
+  const releases = products?.slice(20, products.length).reverse();
 
   return (
     <>

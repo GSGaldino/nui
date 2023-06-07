@@ -103,7 +103,7 @@ export const getStaticPaths = async () => {
   const url = `/sheets?range=produtos`
   const { data } = await api.get(url)
   const products = data.data;
-  const collections = products.reduce((acc: any, prod: any) => {
+  const collections = products?.reduce((acc: any, prod: any) => {
     const existantCollection = acc.find((item: any) => item.name === prod.categoria);
       if (existantCollection) {
         existantCollection.products.push(prod);
@@ -118,7 +118,7 @@ export const getStaticPaths = async () => {
   }, []);
 
   const paths: any = [];
-  collections.forEach((collection: any) => {
+  collections?.forEach((collection: any) => {
     collection.products.forEach((product: any) => {
       paths.push(`/${encodeURIComponent(collection.name || '-')}/${encodeURIComponent(product.title)}`)
     })
