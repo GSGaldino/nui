@@ -45,7 +45,7 @@ export const CartItems = () => {
         )}
       </Stack>
       <ModalConfirmDelete
-        item={modalDelete.item}
+        item={modalDelete.item || { id: '' }}
         isOpen={modalDelete.isOpen}
         onClose={onModalDeleteClose}
       />
