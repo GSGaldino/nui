@@ -1,0 +1,51 @@
+{
+  "camiseta": [
+    {
+      "label": "P",
+      "height": "69,5cm",
+      "width": "53cm"
+    },
+    {
+      "label": "M",
+      "height": "71cm",
+      "width": "55cm"
+    },
+    {
+      "label": "G",
+      "height": "72,5cm",
+      "width": "57cm"
+    },
+    {
+      "label": "GG",
+      "height": "74cm",
+      "width": "59cm"
+    },
+    {
+      "label": "XG",
+      "height": "75,5cm",
+      "width": "61cm"
+    }
+  ],
+  "cropped": [
+    {
+      "label": "P",
+      "height": "40,5cm",
+      "width": "52cm"
+    },
+    {
+      "label": "M",
+      "height": "42cm",
+      "width": "54cm"
+    },
+    {
+      "label": "G",
+      "height": "43,5cm",
+      "width": "56cm"
+    },
+    {
+      "label": "GG",
+      "height": "45cm",
+      "width": "58cm"
+    }
+  ]
+}
