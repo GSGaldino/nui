@@ -89,7 +89,7 @@ export default function Product({ products }: { products: any }) {
 
 export const getStaticProps = async () => {
   const data = await SheetService.getRange('produtos');
-  const products = data.data;
+  const products = data;
 
   return {
     props: {
@@ -101,7 +101,7 @@ export const getStaticProps = async () => {
 
 export const getStaticPaths = async () => {
   const data = await SheetService.getRange('produtos');
-  const products = data.data;
+  const products = data;
   const collections = products?.reduce((acc: any, prod: any) => {
     const existantCollection = acc.find((item: any) => item.name === prod.categoria);
       if (existantCollection) {
