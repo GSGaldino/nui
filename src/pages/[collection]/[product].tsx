@@ -9,9 +9,9 @@ import { Provider, Typography, Collection } from '@/components'
 import { IconButton, Tooltip } from '@chakra-ui/react'
 import getProductType from '@/utils/getProductType';
 
-import Main from './components/Main';
-import Details from './components/Details';
-import Advantages from './components/Advantages';
+import Main from '@/components/Main';
+import Details from '@/components/Details';
+import Advantages from '@/components/Advantages';
 import SheetService from '@/services/SheetService';
 
 import * as S from './productStyles'
