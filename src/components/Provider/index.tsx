@@ -7,3 +7,5 @@ export const Provider = forwardRef<HTMLElement, PropsWithChildren>((props, ref) 
     <S.Provider ref={ref}>{props.children}</S.Provider>
   );
 });
+
+Provider.displayName = 'Provider';

@@ -21,7 +21,7 @@ import { closeModal } from '@/store/modules/user/slice'
 import { finishCart } from '@/store/modules/cart/slice'
 import { IRootState } from '@/store'
 
-export const CartDrawer = memo(() => {
+function CartDrawer() {
   const dispatch = useDispatch();
   const {
     onClose: onModalConfirmClearClose,
@@ -94,4 +94,6 @@ export const CartDrawer = memo(() => {
       />
     </>
   );
-})
+}
+
+export default memo(CartDrawer);
