@@ -38,7 +38,7 @@ export default function Home({ products, banner }: HomeProps) {
         <S.Section>
           <Collection title="Lançamentos" data={releases} />
           {collections.map((collection: any) => collection.name !== '-' && (
-            <Collection title={collection.name} data={collection.products} />
+            <Collection key={collection.name} title={collection.name} data={collection.products} />
           ))}
         </S.Section>
       </Provider>
