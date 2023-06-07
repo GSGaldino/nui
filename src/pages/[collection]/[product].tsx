@@ -14,7 +14,7 @@ import Details from '@/components/Details';
 import Advantages from '@/components/Advantages';
 import SheetService from '@/services/SheetService';
 
-import * as S from './productStyles'
+import * as S from '../../styles/productStyles'
 
 export default function Product({ products }: { products: any }) {
   const router = useRouter();

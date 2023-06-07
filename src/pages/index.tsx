@@ -4,7 +4,7 @@ import { Provider, Collection, Banner } from '@/components'
 import { IProduct } from '@/types'
 import SheetService from '@/services/SheetService'
 
-import * as S from './styles'
+import * as S from '../styles/styles'
 
 interface HomeProps { products: IProduct[], banner: any };
 
