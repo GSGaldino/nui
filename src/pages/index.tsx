@@ -48,7 +48,7 @@ export default function Home({ products, banner }: HomeProps) {
 
 export const getStaticProps = async () => {
   const [products, banner] = await Promise.all(['produtos', 'banner_site'].map(async (item) => {
-    const data = await SheetService.getRange(`/sheets?range=${item}`);
+    const data = await SheetService.getRange(item);
     return data.data
   }))
 
