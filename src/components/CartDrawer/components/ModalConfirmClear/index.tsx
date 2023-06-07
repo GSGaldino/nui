@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+// import { useSelector, useDispatch } from 'react-redux'
 
 import {
   Modal,
@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Typography } from '@/components'
-import { clearCart } from '@/store/modules/cart/slice'
+// import { clearCart } from '@/store/modules/cart/slice'
 import { IRootState } from '@/store'
 
 interface ModalConfirmClearProps {
@@ -24,9 +24,10 @@ interface ModalConfirmClearProps {
 
 function ModalConfirmClear({ isOpen, onClose }: ModalConfirmClearProps) {
   const toast = useToast();
-  const dispatch = useDispatch();
+  const items: Array<any> = [];
+  // const dispatch = useDispatch();
 
-  const { items } = useSelector((state: IRootState) => state.cart);
+  // const { items } = useSelector((state: IRootState) => state.cart);
 
   const onClear = () => {
     if (!items.length) {
@@ -38,7 +39,7 @@ function ModalConfirmClear({ isOpen, onClose }: ModalConfirmClearProps) {
       });
     }
 
-    dispatch(clearCart())
+    // dispatch(clearCart())
     return onClose?.()
   };
 

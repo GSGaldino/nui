@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const easeInCubic = 'cubic-bezier(0.55, 0.055, 0.675, 0.19)';
 const easeOutCubic = 'cubic-bezier(0.215, 0.61, 0.355, 1)';
 
-export const LoadingBar = styled.div`
-  background: ${({ isdark }) => (isdark ? 'var(--absolute-black)' : 'var(--absolute-white)')};
+export const LoadingBar = styled.div<{ isdark: boolean }>`
+  background: ${({ isdark }: { isdark: boolean }) => (isdark ? 'var(--absolute-black)' : 'var(--absolute-white)')};
   position: fixed;
   left: 0;
   top: 0;

@@ -1,10 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { IconButton as IconButtonChakra } from '@chakra-ui/react';
+import { IconButton as IconButtonChakra, IconButtonProps } from '@chakra-ui/react';
 import { Typography } from '@/components';
 import Color from './components/Color';
 // import { useDarkMode } from '~/context/DarkMode';
+
+export interface IIconButton extends IconButtonProps {
+  onClick: () => void;
+  hex: string;
+  active: boolean;
+}
 
 function IconButton({
   children,
@@ -15,7 +21,7 @@ function IconButton({
   colorScheme,
   onClick,
   ...rest
-}: any) {
+}: IIconButton) {
   // const { darkMode } = useDarkMode();
   const darkMode = false;
   const iconRef = useRef<HTMLInputElement | null>(null);

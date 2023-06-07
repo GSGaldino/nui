@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Typography, SearchInput } from '@/components'
-import { openModal } from '@/store/modules/user/slice'
+// import { openModal } from '@/store/modules/user/slice'
 import { useDarkMode } from '@/context/DarkMode'
 import { IRootState } from '@/store'
 // import { HashLink } from 'react-router-hash-link'
@@ -31,13 +31,14 @@ export const Drawer = () => {
 
   // const foreground = darkMode ? 'var(--absolute-white)' : 'var(--absolute-black)';
 
-  const loggedUser = useSelector((state: IRootState) => state?.user?.loggedUser);
+  // const loggedUser = useSelector((state: IRootState) => state?.user?.loggedUser);
 
-  const isLogged = useMemo(() => !!loggedUser?.dashboardToken, [loggedUser]);
+  // const isLogged = useMemo(() => !!loggedUser?.dashboardToken, [loggedUser]);
+  const isLogged = false;
 
   const onCartClick = () => {
     onClose();
-    dispatch(openModal('cart'));
+    // dispatch(openModal('cart'));
   };
 
   return (
@@ -57,7 +58,8 @@ export const Drawer = () => {
           <DrawerHeader>
             {isLogged ? (
               <Avatar
-                name={loggedUser.name as string}
+                // name={loggedUser.name as string}
+                name=""
                 variant="circle"
                 bg="none"
                 w={10}

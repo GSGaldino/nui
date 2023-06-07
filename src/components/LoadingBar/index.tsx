@@ -1,14 +1,13 @@
 import React from 'react';
 
-import { useDarkMode } from '~/context/DarkMode';
 import { LoadingBar } from './styles';
 
 function LoadingBarComponent() {
-  const { darkMode } = useDarkMode();
+  const darkMode = false;
 
   return (
-    <LoadingBar>
-      <div isdark={darkMode ? true : undefined} className="spinner__progress" />
+    <LoadingBar isdark={darkMode}>
+      <div className="spinner__progress" />
     </LoadingBar>
   );
 }

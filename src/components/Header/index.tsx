@@ -13,7 +13,7 @@ import {
 import { Provider, Logo, Search, Typography, CartDrawer } from '@/components'
 import { Drawer, HeaderLink } from './components'
 import { useDarkMode } from '@/context/DarkMode'
-import { openModal } from '@/store/modules/user/slice'
+// import { openModal } from '@/store/modules/user/slice'
 import { IRootState } from '@/store'
 // import LupaIcon from '~/assets/icons/Lupa';
 // import ProfileIcon from '~/assets/icons/Profile';
@@ -25,15 +25,20 @@ export const Header = () => {
   const dispatch = useDispatch();
   const { darkMode } = useDarkMode();
 
-  const items = useSelector((state: IRootState) => state?.cart?.items);
+  // const items = useSelector((state: IRootState) => state?.cart?.items);
 
-  const loggedUser = useSelector((state: IRootState) => state?.user?.loggedUser);
+  // const loggedUser = useSelector((state: IRootState) => state?.user?.loggedUser);
 
-  const isLogged = useMemo(() => !!loggedUser?.dashboardToken, [loggedUser]);
+  const isLogged = false;
+  const items = [];
 
-  const onSearchClick = () => dispatch(openModal('search'));
+  // const isLogged = useMemo(() => !!loggedUser?.dashboardToken, [loggedUser]);
 
-  const onCartClick = () => dispatch(openModal('cart'));
+  // const onSearchClick = () => dispatch(openModal('search'));
+  const onSearchClick = () => {}
+
+  // const onCartClick = () => dispatch(openModal('cart'));
+  const onCartClick = () => {}
 
   const links = [
     {
@@ -106,7 +111,8 @@ export const Header = () => {
             >
               {isLogged ? (
                 <Avatar
-                  name={loggedUser.name as string}
+                  // name={loggedUser.name as string}
+                  name=""
                   fontWeight={700}
                   variant="circle"
                   bg="none"

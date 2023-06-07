@@ -23,6 +23,7 @@ function PaymentMethod({ price, paymentMethods, selectedPaymentMethod, setPaymen
       <S.Methods>
         {paymentMethods?.map((method) => (
           <IconButton
+            aria-label=''
             key={method.value}
             onClick={() => onChange(method.value)}
             active={method.value === selectedPaymentMethod}

@@ -1,21 +1,21 @@
-import {
-  all,
-  put,
-  takeLatest,
-  select,
-} from 'redux-saga/effects';
+// import {
+//   all,
+//   put,
+//   takeLatest,
+//   select,
+// } from 'redux-saga/effects';
 
-import * as actions from './slice';
-import * as orderActions from '~/store/modules/orders/slice';
+// import * as actions from './slice';
+// import * as orderActions from '@/store/modules/orders/slice';
 
-function* finishBudget() {
-  const budget = yield select((state) => state.budget);
+// function* finishBudget() {
+//   const budget = yield select((state: any) => state.budget);
 
-  yield put(orderActions.createOrder({
-    items: [budget],
-  }));
-}
+//   yield put(orderActions.createOrder({
+//     items: [budget],
+//   }));
+// }
 
-export default all([
-  takeLatest(actions.finishBudget.type, finishBudget),
-]);
+// export default all([
+//   takeLatest(actions.finishBudget.type, finishBudget),
+// ]);

@@ -1,8 +1,6 @@
 import React, { memo, useState } from 'react';
 import Image from 'next/image'
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-import Magnifier from 'react-magnifier';
 
 import { useMediaQuery } from 'react-responsive';
 import { Button } from '@chakra-ui/react';
@@ -10,16 +8,17 @@ import { Typography } from '@/components';
 import Size from './components/Size';
 import Color from './components/Color';
 import PaymentMethod from './components/PaymentMethod';
+import Magnifier from './components/Magnifier';
+
 import paymentMethods from '@/constants/paymentMethods.json';
 import mountMessage from '@/utils/mountMessage'
 
 import * as S from './styles';
 
 function Main({ product }: { product: any }) {
-  const sizes = product.tamanhos_disponiveis?.split(',');
-  const [size, setSize] = useState(sizes[1]);
+  const sizes = product?.tamanhos_disponiveis?.split(',');
+  const [size, setSize] = useState(sizes && sizes[1] || 'M');
 
-  console.log('PrODUCT', product);
   const [paymentMethod, setPaymentMethod] = useState(paymentMethods[0].value);
 
   const darkMode = false;
@@ -48,7 +47,6 @@ function Main({ product }: { product: any }) {
           <Typography variant="h1-normal">{product?.nome}</Typography>
         )}
         <Magnifier
-          // width={240}
           src={product?.foto_1}
         />
       </S.Image>

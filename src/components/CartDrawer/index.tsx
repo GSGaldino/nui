@@ -17,8 +17,8 @@ import { Typography } from '@/components'
 import CartItems from './components/CartItems'
 import ModalConfirmClear from './components/ModalConfirmClear'
 
-import { closeModal } from '@/store/modules/user/slice'
-import { finishCart } from '@/store/modules/cart/slice'
+// import { closeModal } from '@/store/modules/user/slice'
+// import { finishCart } from '@/store/modules/cart/slice'
 import { IRootState } from '@/store'
 
 function CartDrawer() {
@@ -29,13 +29,14 @@ function CartDrawer() {
     onOpen: onModalConfirmClearOpen,
   } = useDisclosure();
 
-  const { cart: isOpen } = useSelector((state: IRootState) => state.user.modals);
+  // const { cart: isOpen } = useSelector((state: IRootState) => state.user.modals);
+  const isOpen = false;
 
-  const onClose = () => dispatch(closeModal('cart'));
+  // const onClose = () => dispatch(closeModal('cart'));
 
   const onCartFinish = () => {
-    onClose();
-    dispatch(finishCart());
+    // onClose();
+    // dispatch(finishCart());
   };
 
   return (
@@ -43,7 +44,7 @@ function CartDrawer() {
       <Drawer
         isOpen={isOpen}
         placement="right"
-        onClose={onClose}
+        onClose={() => {}}
       >
         <DrawerContent
           boxShadow="0px 8px 40px 0px rgba(0,0,0,.2)"

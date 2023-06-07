@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 import cc from 'classcat';
 import { useDarkMode } from '@/context/DarkMode';
@@ -13,14 +13,13 @@ export type TypographyVariant = 'body-default'
 | 'h3-normal'
 | 'h4-normal';
 
-export type TypographyProps = {
+export type TypographyProps = PropsWithChildren<{
   variant?: TypographyVariant;
   as?: string;
   color?: 'light' | 'dark' | 'gray';
   size?: 'small' | 'medium' | 'large';
   holdColor?: boolean;
-  children?: JSX.Element | JSX.Element[] | string;
-};
+}>;
 
 export const Typography = ({
   variant,

@@ -14,9 +14,10 @@ export const CartItems = () => {
     item: null,
   });
 
-  const { items } = useSelector((state: IRootState) => state.cart);
+  // const { items } = useSelector((state: IRootState) => state.cart);
+  const items: Array<any> = [];
 
-  useEffect(() => { }, [items]);
+  useEffect(() => { }, []);
 
   const onModalDeleteClose = () => setModalDelete({
     ...modalDelete,

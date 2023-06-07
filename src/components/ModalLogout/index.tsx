@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
 
 import {
   Modal,
@@ -13,17 +12,15 @@ import {
   Button,
 } from '@chakra-ui/react';
 
-import Typography from '~/components/Typography';
+import { Typography } from '@/components';
 
-import { logout } from '~/store/modules/user/slice';
 
-function ModalLogout({ isOpen, onClose }) {
-  const dispatch = useDispatch();
-
-  const { isLoading } = useSelector((state) => state.common);
+function ModalLogout({ isOpen, onClose }: any) {
+  // const { isLoading } = useSelector((state) => state.common);
+  const isLoading = false;
 
   const onLogout = () => {
-    dispatch(logout());
+    // dispatch(logout());
     return onClose();
   };
 
