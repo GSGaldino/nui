@@ -1,44 +1,18 @@
-import React, { useMemo } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useDispatch } from 'react-redux';
 
-import {
-  IconButton,
-  AvatarBadge,
-  Avatar,
-  ScaleFade,
-} from '@chakra-ui/react'
-
-import { Provider, Logo, Search, Typography, CartDrawer } from '@/components'
+import { Provider, Logo, Search, CartDrawer, IconButton } from '@/components'
 import { Drawer, HeaderLink } from './components'
-import { useDarkMode } from '@/context/DarkMode'
-// import { openModal } from '@/store/modules/user/slice'
-import { IRootState } from '@/store'
-// import LupaIcon from '~/assets/icons/Lupa';
-// import ProfileIcon from '~/assets/icons/Profile';
-// import CartIcon from '~/assets/icons/Cart';
+import { openModal } from '@/store/modules/user/slice'
 
 import * as S from './styles';
 
 export const Header = () => {
   const dispatch = useDispatch();
-  const { darkMode } = useDarkMode();
 
-  // const items = useSelector((state: IRootState) => state?.cart?.items);
+  const onSearchClick = () => dispatch(openModal('search'));
 
-  // const loggedUser = useSelector((state: IRootState) => state?.user?.loggedUser);
-
-  const isLogged = false;
-  const items = [];
-
-  // const isLogged = useMemo(() => !!loggedUser?.dashboardToken, [loggedUser]);
-
-  // const onSearchClick = () => dispatch(openModal('search'));
-  const onSearchClick = () => {}
-
-  // const onCartClick = () => dispatch(openModal('cart'));
-  const onCartClick = () => {}
+  const onCartClick = () => dispatch(openModal('cart'));
 
   const links = [
     {
@@ -67,9 +41,6 @@ export const Header = () => {
     },
   ];
 
-  const foreground = darkMode ? 'var(--absolute-white)' : 'var(--absolute-black)';
-  const background = darkMode ? 'var(--absolute-black)' : 'var(--absolute-white)';
-
   return (
     <S.Container>
       <Provider>
@@ -87,61 +58,9 @@ export const Header = () => {
           </div>
 
           <div>
-            <IconButton
-              bg={background}
-              as={Link}
-              // to="/account"
-              colorScheme="blackAlpha"
-              variant={darkMode ? 'ghost' : 'solid'}
-              aria-label=''
-              href=""
-              onClick={onSearchClick}
-            >
-              <Image src="icons/lupa.svg" alt="" width={40} height={40} />
-            </IconButton>
-
-            <IconButton
-              bg={background}
-              as={Link}
-              // to="/account"
-              colorScheme="blackAlpha"
-              variant={darkMode ? 'ghost' : 'solid'}
-              aria-label=''
-              href=""
-            >
-              {isLogged ? (
-                <Avatar
-                  // name={loggedUser.name as string}
-                  name=""
-                  fontWeight={700}
-                  variant="circle"
-                  bg="none"
-                  w={10}
-                  h={10}
-                  color={foreground}
-                  border={`2.5px solid ${foreground}`}
-                />
-              ) : (
-                <Image src="/icons/profile.svg" alt="" width={40} height={40} />
-              )}
-            </IconButton>
-            <IconButton
-              colorScheme="blackAlpha"
-              variant={darkMode ? 'ghost' : 'solid'}
-              bg={background}
-              onClick={onCartClick}
-              aria-label=''
-            >
-              <Avatar icon={<Image src="/icons/cart.svg" alt="" width={40} height={40} />} bg="none">
-                <ScaleFade in={items?.length as unknown as boolean} initialScale={1}>
-                  <AvatarBadge boxSize="1.25em" bg={foreground}>
-                    <Typography color="light">
-                      {String(items?.length || 0)}
-                    </Typography>
-                  </AvatarBadge>
-                </ScaleFade>
-              </Avatar>
-            </IconButton>
+            <IconButton icon="/icons/lupa.svg" onClick={onSearchClick} />
+            <IconButton icon="/icons/profile.svg" />
+            <IconButton icon="/icons/cart.svg" onClick={onCartClick} />
           </div>
 
           <Drawer />

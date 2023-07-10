@@ -1,7 +1,7 @@
 import { combineReducers, AnyAction, CombinedState } from '@reduxjs/toolkit';
 
-// import user from './user/slice';
-// import cart from './cart/slice';
+import user from './user/slice';
+import cart from './cart/slice';
 // import products from './products/slice';
 // import common from './common/slice';
 // import budget from './budget/slice';
@@ -10,8 +10,8 @@ import { combineReducers, AnyAction, CombinedState } from '@reduxjs/toolkit';
 // import * as userActions from './user/slice';
 
 const appReducer = combineReducers({
-  // user,
-  // cart,
+  user,
+  cart,
   // products,
   // common,
   // orders,

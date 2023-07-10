@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Typography } from '@/components'
-// import { removeItem } from '@/store/modules/cart/slice'
+import { removeItem } from '@/store/modules/cart/slice'
 
 interface ModalConfirmClearProps {
   isOpen?: boolean;
@@ -24,10 +24,10 @@ interface ModalConfirmClearProps {
 }
 
 const ModalConfirmClear = ({ isOpen, onClose, item }: ModalConfirmClearProps) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const onDelete = () => {
-    // dispatch(removeItem(item?.id))
+    dispatch(removeItem(item?.id as string))
     return onClose?.()
   };
 

@@ -14,8 +14,7 @@ export const CartItems = () => {
     item: null,
   });
 
-  // const { items } = useSelector((state: IRootState) => state.cart);
-  const items: Array<any> = [];
+  const { items } = useSelector((state: IRootState) => state.cart);
 
   useEffect(() => { }, []);
 

@@ -1,33 +1,34 @@
 import React, { useMemo } from 'react'
+import { useDispatch } from 'react-redux'
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { useRouter } from 'next/router'
-import api from '@/services/api'
 
-import { Provider, Typography, Collection } from '@/components'
-import { IconButton, Tooltip } from '@chakra-ui/react'
+import { Provider, Typography, Collection, IconButton } from '@/components'
+import { Tooltip } from '@chakra-ui/react'
 import getProductType from '@/utils/getProductType';
 
 import Main from '@/components/Main';
 import Details from '@/components/Details';
 import Advantages from '@/components/Advantages';
 import SheetService from '@/services/SheetService';
+import { addItem } from '@/store/modules/cart/slice'
 
 import * as S from '../../styles/productStyles'
 
 export default function Product({ products }: { products: any }) {
-  const router = useRouter();
-  const { collection, product } = router.query;
+  const router = useRouter()
+  const dispatch = useDispatch()
+  const { collection, product } = router.query
 
   const darkMode = false;
-  const prod = products?.find((prod: any) => prod.slug === product);
-  const type = getProductType(prod);
+  const prod = products?.find((prod: any) => prod.slug === product)
+  const type = getProductType(prod)
 
-  const background = darkMode ? 'var(--absolute-black)' : 'var(--absolute-white)';
-  const foreground = darkMode ? 'var(--absolute-white)' : 'var(--absolute-black)';
+  const background = darkMode ? 'var(--absolute-black)' : 'var(--absolute-white)'
+  const foreground = darkMode ? 'var(--absolute-white)' : 'var(--absolute-black)'
 
-  const onCartClick = () => {};
+  const onCartClick = () => dispatch(addItem(prod));
 
   const data = useMemo(() => {
     const filtered = products?.filter((prod: any) => getProductType(prod) === type);
@@ -57,18 +58,7 @@ export default function Product({ products }: { products: any }) {
           </div>
 
           <Tooltip label="Adicionar ao carrinho" placement="top" hasArrow openDelay={500}>
-            <IconButton
-              colorScheme={darkMode ? 'whiteAlpha' : 'gray'}
-              variant={darkMode ? 'ghost' : 'solid'}
-              bg={background}
-              onClick={onCartClick}
-              w="50px"
-              p={2.5}
-              aria-label=""
-            >
-              <Image src="/icons/cart.svg" alt="" width={40} height={40} />
-              {/* <CartIcon color={foreground} /> */}
-            </IconButton>
+            <IconButton icon="/icons/cart.svg" onClick={onCartClick} />
           </Tooltip>
         </S.PreTitle>
 

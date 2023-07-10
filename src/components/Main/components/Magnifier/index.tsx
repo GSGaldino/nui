@@ -48,11 +48,11 @@ const Magnifier: React.FC<MagnifierProps> = ({ src }) => {
           ref={magnifierRef}
           style={{
             position: 'absolute',
-            top: '-50%',
-            left: '-50%',
-            transform: `translate(${magnifierPosition.x}%, ${magnifierPosition.y}%)`,
-            width: '200px',
-            height: '200px',
+            top: `${magnifierPosition.y}%`,
+            left: `${magnifierPosition.x}%`,
+            transform: 'translate(-50%, -50%)',
+            width: '300px',
+            height: '300px',
             borderRadius: '50%',
             border: '1px solid #ccc',
             overflow: 'hidden',
@@ -66,6 +66,7 @@ const Magnifier: React.FC<MagnifierProps> = ({ src }) => {
               backgroundPosition: `${magnifierPosition.x}% ${magnifierPosition.y}%`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: `${imageRef.current?.width}px ${imageRef.current?.height}px`,
+              transform: 'scale(2)'
             }}
           />
         </div>

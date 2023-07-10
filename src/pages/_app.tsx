@@ -46,11 +46,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={theme}>
         <Provider store={store}>
           {/* <PersistGate persistor={persistor}> */}
-            <GlobalStyles />
             <ToastContainer />
             <Header />
             <Component {...pageProps} />
             <Footer />
+            <GlobalStyles />
           {/* </PersistGate> */}
         </Provider>
       </ChakraProvider>

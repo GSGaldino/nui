@@ -1,18 +1,18 @@
-// import {
-//   all,
-//   takeLatest,
+import {
+  all,
+  takeLatest,
 //   select,
 //   put,
-// } from 'redux-saga/effects';
+} from 'redux-saga/effects';
 
-// import { createStandaloneToast } from '@chakra-ui/react';
+import { createStandaloneToast } from '@chakra-ui/react';
 
-// import * as orderActions from '~/store/modules/orders/slice';
-// import * as actions from './slice';
+// import * as orderActions from '../orders/slice';
+import * as actions from './slice';
 
-// import message from '~/utils/mountMessageMultipleItems';
+// import message from '../../../utils/mountMessage';
 
-// const { toast } = createStandaloneToast();
+const { toast } = createStandaloneToast();
 
 // export function* addItem(action) {
 //   const item = action.payload;
@@ -42,7 +42,7 @@
 
 //   const { items } = yield select((state) => state.cart);
 
-//   const exists = items.findIndex((i) => i.id === id);
+//   const exists = items.findIndex((i: any) => i.id === id);
 
 //   if (exists <= -1) {
 //     return toast({
@@ -64,13 +64,13 @@
 //   return yield put(actions.removeItemSuccess(newItems));
 // }
 
-// export function clearCart() {
-//   toast({
-//     isClosable: true,
-//     title: 'Sucesso',
-//     description: 'Carrinho esvaziado com sucesso',
-//   });
-// }
+export function clearCart() {
+  toast({
+    isClosable: true,
+    title: 'Sucesso',
+    description: 'Carrinho esvaziado com sucesso',
+  });
+}
 
 // export function* finishCart() {
 //   const { items } = yield select((state) => state.cart);
@@ -95,9 +95,9 @@
 //   }));
 // }
 
-// export default all([
+export default all([
 //   takeLatest(actions.addItem.type, addItem),
-//   takeLatest(actions.clearCart.type, clearCart),
+  takeLatest(actions.clearCart.type, clearCart),
 //   takeLatest(actions.finishCart.type, finishCart),
 //   takeLatest(actions.removeItem.type, removeItem),
-// ]);
+]);

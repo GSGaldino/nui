@@ -32,14 +32,12 @@ class SheetsService {
   }
 
   public async getRange(range: string): Promise<any> {
-    console.log('GETTING RANDE', range);
     const sheets = google.sheets({ version: 'v4', auth: this.auth });
     
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: this.sheetId,
       range,
     });
-    console.log('GETTING RANDE', response);
 
     return formatSheetData(response.data.values as Row[]);
   }

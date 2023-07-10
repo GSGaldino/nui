@@ -9,16 +9,17 @@ interface Colors {
   [key: string]: string;
 }
 
+export interface CartItem {
+  name: string;
+  size: string;
+  color: string;
+  paymentMethod?: string;
+  type?: string;
+  thumbnailUrl: string;
+}
+
 interface CartItemProps {
-  item: {
-    id: string;
-    name: string;
-    size: string;
-    color: string;
-    paymentMethod: string;
-    type: string;
-    thumbnailUrl: string;
-  };
+  item: CartItem;
   onDelete: () => void;
 }
 
